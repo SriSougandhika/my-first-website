@@ -1,0 +1,112 @@
+/* to get font - montserrat from googleapis */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* body font - text */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+/* heading style */
+h1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+/* format - centering */
+form {
+    text-align: center;
+    margin: 20px 0;
+}
+/* for search bar */
+input[type="text"] {
+    padding: 5px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* for all buttons - next, previous, back to list, search */
+button, .button {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+/* when hovered, it should become darker */
+button:hover, .button:hover {
+    background-color: #388E3C;
+    text-decoration: underline;
+}
+/* list items style */
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+/* inside list styling */
+li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+/* back to list button when hovered */
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+/* pagination alignment */
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    text-decoration: none;
+    color: #4CAF50;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.pagination a:hover {
+    color: #013220; /* dark green */
+    text-decoration: underline;
+}
+
+.pagination a.disabled {
+    color: #ccc;
+    pointer-events: none;
+}
+/* details.html styling */
+.restaurant-details {
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.restaurant-details h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.back-button-container {
+    text-align: center; /* Center the container */
+    margin-top: 20px;
+}

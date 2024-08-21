@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Restaurants</title>
+</head>
+<body>
+    <h1>Restaurants</h1>
+
+    <form action="{{ url_for('search_restaurants') }}" method="get">
+        <input type="text" name="query" placeholder="Search by name, cuisine, or country code">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <ul>
+        {% for restaurant in restaurants %}
+            <li>
+                <a href="{{ url_for('get_restaurant_by_id', restaurant_id=restaurant['Restaurant ID']) }}">
+                    {{ restaurant['Restaurant Name'] }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="pagination">
+        <a href="{{ url_for('get_restaurants', page=page-1) }}" {% if page <= 1 %} class="disabled" {% endif %}><b>Previous</b></a>
+        <span>Page {{ page }} of {{ total // per_page + (total % per_page > 0) }}</span>
+        <a href="{{ url_for('get_restaurants', page=page+1) }}" {% if page >= total // per_page %} class="disabled" {% endif %}><b>Next</b></a>
+    </div>
+</body>
+</html>

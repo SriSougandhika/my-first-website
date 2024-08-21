@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>Restaurant Details</title>
+</head>
+<body>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <div class="restaurant-details">
+            <h1>{{ restaurant['Restaurant Name'] }}</h1>
+            <p>Address: {{ restaurant['Address'] }}</p>
+            <p>City: {{ restaurant['City'] }}</p>
+            <p>Cuisines: {{ restaurant['Cuisines'] }}</p>
+            <p>Rating: {{ restaurant['Aggregate rating'] }}</p>
+            <p>Votes: {{ restaurant['Votes'] }}</p>
+            <p>Has Table Booking: {{ restaurant['Has Table booking'] }}</p>
+            <p>Has Online Delivery: {{ restaurant['Has Online delivery'] }}</p>
+            <p>Average Cost for Two: {{ restaurant['Average Cost for two'] }}</p>
+        </div>
+    {% endif %}
+    <div class="back-button-container">
+        <a href="{{ url_for('get_restaurants') }}" class="button">Back to list</a>
+    </div>
+</body>
+</html>
